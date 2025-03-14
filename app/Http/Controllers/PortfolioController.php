@@ -77,7 +77,7 @@ class PortfolioController extends Controller {
             'technologies' => 'required|array',
         ]);
 
-        $portfolio = Portfolio::create($request->only(['name', 'description', 'site_url', 'sort_order', 'status']));
+        $portfolio = Portfolio::create($request->only(['name', 'description', 'launch_date', 'site_url', 'sort_order', 'status']));
         $portfolio->categories()->attach($request->categories);
         $portfolio->industries()->attach($request->industries);
         $portfolio->technologies()->attach($request->technologies);
@@ -111,7 +111,7 @@ class PortfolioController extends Controller {
         ]);
 
         $portfolio = Portfolio::find($portfolio);
-        $portfolio->update($request->only(['name', 'description', 'site_url', 'sort_order', 'status']));
+        $portfolio->update($request->only(['name', 'description', 'launch_date', 'site_url', 'sort_order', 'status']));
         $portfolio->categories()->sync($request->categories);
         $portfolio->industries()->sync($request->industries);
         $portfolio->technologies()->sync($request->technologies);

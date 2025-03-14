@@ -45,7 +45,7 @@
                 </li>
                 
                 <li class="aiz-side-nav-item">
-                    <a href="{{ route('portfolios.index') }}" class="aiz-side-nav-link">
+                    <a href="{{ route('portfolios.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['portfolios.create','portfolios.edit']) }}">
                         <i class="las la-link  aiz-side-nav-icon"></i>
                         <span class="aiz-side-nav-text">Porfolios</span>
                     </a>

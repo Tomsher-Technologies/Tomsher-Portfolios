@@ -73,11 +73,14 @@
         </div>
     </div>
     <div class="card-body">
-        <table class="table aiz-table mb-0">
+        <table class="table table-bordered aiz-table mb-0">
             <thead>
                 <tr>
                     <th  class="text-center">#</th>
-                    <th>Title</th>
+                    <th>
+                        Title
+                        <br><span class="text-muted">(Launch Date)</span>
+                    </th>
                     <th>Site Link</th>
                     <th >Category</th>
                     <th >Industry</th>
@@ -91,7 +94,12 @@
                 @foreach($portfolios as $key => $portfolio)
                     <tr>
                         <td class="text-center">{{ ($key+1) + ($portfolios->currentPage() - 1)*$portfolios->perPage() }}</td>
-                        <td>{{ $portfolio->name }}</td>
+                        <td>
+                            {{ $portfolio->name }} 
+                            @if ($portfolio->launch_date != NULL)
+                                <br><span class="text-muted">({{ date('d/m/Y', strtotime($portfolio->launch_date) )}})</span>
+                            @endif
+                        </td>
                         <td>{{ $portfolio->site_url }}</td>
                         <td class="text-start" style="">
                             <ul style="margin-left: -20px;">

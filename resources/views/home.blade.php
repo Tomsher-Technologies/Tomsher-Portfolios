@@ -179,7 +179,7 @@
                                     <!-- Category Box -->
                                     <div class="card">
                                         <div class="card-header">
-                                            <h6>{{ $category->name }}</h6>
+                                            <h6>{{ $category->name }} ({{$category->portfolios->count()}})</h6>
                                             <button class="copy-all-links-btn" data-category="{{ $category->id }}">Copy All Links</button>
                                         </div>
                                         <div class="card-body">
@@ -210,7 +210,7 @@
                             <!-- Category Box -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Filtered Result</h5>
+                                    <h6>Filtered Result ({{$portfolios->count()}})</h6>
                                     <button class="copy-all-links-btn" data-category="1">Copy All Links</button>
                                 </div>
                                 <div class="card-body">

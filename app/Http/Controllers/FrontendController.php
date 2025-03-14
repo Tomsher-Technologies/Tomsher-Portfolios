@@ -48,7 +48,7 @@ class FrontendController extends Controller {
             $portfolios = $portfolios->where('status', 1)->orderBy('sort_order','ASC')->get();
         }else{
             $categoryPortfolios = Category::with(['portfolios' => function ($query) {
-                                        $query->orderBy('sort_order', 'ASC'); // Sorting portfolios within each category
+                                        $query->where('status', 1)->orderBy('sort_order', 'ASC'); // Sorting portfolios within each category
                                     }])->where('status', 1)->get();
         }
         

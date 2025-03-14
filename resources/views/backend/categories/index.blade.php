@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="card-body">
-        <table class="table aiz-table mb-0">
+        <table class="table table-bordered aiz-table mb-0">
             <thead>
                 <tr>
                     <th  class="text-center">#</th>

@@ -37,6 +37,14 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="site_url">Launch Date</label>
+                            <input type="date" class="form-control" id="dateInput" name="launch_date" value="{{ old('launch_date', $portfolio->launch_date ?? '') }}">
+                            @error('launch_date')
+                                <div class="alert alert-danger mt-1">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="sort_order">Sort Order</label>
                             <input type="number" class="form-control" name="sort_order" value="{{ old('sort_order', $portfolio->sort_order ?? 0) }}">
                             @error('sort_order')
@@ -115,11 +123,17 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
     <script>
-    window.onload = function () {
+        window.onload = function () {
             $('.select2').select2({
                 placeholder: "Select options",
                 allowClear: true
             });
         };
+
+        $(document).ready(function(){
+            $('#dateInput').on('focus click', function () {
+                this.showPicker();
+            });
+        });
     </script>
 @endsection

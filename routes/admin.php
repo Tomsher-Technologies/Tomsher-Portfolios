@@ -19,6 +19,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('admin.logout');
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/', [AdminController::class, 'admin_dashboard'])->name('admin.dashboard');
+    Route::get('/portfolio-monthly-count', [AdminController::class, 'getMonthlyPortfolioCount']);
     Route::get('/cache-cache', [AdminController::class, 'clearCache'])->name('cache.clear');
 
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
