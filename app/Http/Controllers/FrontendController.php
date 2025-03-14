@@ -12,7 +12,15 @@ use Cache;
 
 class FrontendController extends Controller {
 
+    public function login(){
+        return view('login');
+    }
+
     public function index(Request $request) {
+
+        if (!session()->has('verified_email')) {
+            abort(404);
+        }
 
         $search = $request->has('search') ? $request->search : '';
         $portfolios = $categoryPortfolios = [];

@@ -119,6 +119,7 @@
 
 <div class="portfolio-container">
     <div class="container">
+       
         <div class="card">
             <div class="card-header row" style="background: white;">
                 <h5 class="col-md-12 mb-1 h4 text-center" style="color: #000000">Portfolios</h5>
@@ -165,7 +166,7 @@
         
                         <div class="col-md-4 mt-2">
                             <button class="btn btn-info " type="submit">Filter</button>
-                            <a href="{{ route('home') }}" class="btn btn-cancel">Reset</a>
+                            <a href="{{ route('home.portfolios') }}" class="btn btn-cancel">Reset</a>
                         </div>
                     </form>
                 </div>

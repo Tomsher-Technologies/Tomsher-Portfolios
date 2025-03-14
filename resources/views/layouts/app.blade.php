@@ -121,22 +121,20 @@
 
     <div class="aiz-main-wrapper" style="background: white;">
         <div class="aiz-content-wrapper">
-            <div class="aiz-topbar px-15px px-lg-25px align-items-stretch justify-content-between">
-                <div class="justify-content-between align-items-stretch flex-grow-xl-1">
-                    <div class="justify-content-around align-items-center align-items-stretch">
-                        <div class="justify-content-around align-items-center align-items-stretch ml-3">
-                            <div class="aiz-topbar-item">
-                                <div class="align-items-center">
-                                    <div class="text-center">
-                                        <a href="{{ route('home') }}" class="d-block text-left">
-                                            <img class="mw-100" height="60" src="{{ asset('assets/images/logo.png') }}" 
-                                                    alt="{{ env('APP_NAME') }}">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="aiz-topbar px-15px px-lg-25px align-items-stretch row">
+               
+                <div class="text-center d-flex col-md-12">
+                    <div class="col-md-4"></div>
+                    <a href="{{ route('home.portfolios') }}" class="d-block text-center col-md-4">
+                        <img class="mw-100" height="60" src="{{ asset('assets/images/logo.png') }}" 
+                                alt="{{ env('APP_NAME') }}">
+                    </a>
+
+                    <a href="{{ route('logout') }}" class=" btn col-md-4 mt-2" style="text-align:end;font-size: 18px !important;
+    font-weight: 500;">
+                        <i class="las la-sign-out-alt"></i>
+                        <span>{{ trans('messages.logout')}}</span>
+                    </a>
                 </div>
             </div><!-- .aiz-topbar -->
             
