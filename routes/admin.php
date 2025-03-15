@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TechnologyController;
 use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\UserController;
 
 Route::group(['middleware' => ['guest']], function () {
     Route::get('login', [AuthController::class, 'showLoginForm'])->name('admin.login');
@@ -48,6 +49,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/portfolios/status', [PortfolioController::class, 'updateStatus'])->name('portfolios.status');
     Route::get('/portfolios/delete/{id}', [PortfolioController::class, 'destroy'])->name('portfolios.destroy');
 
-
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+    Route::post('/users/update/{id}', [UserController::class, 'update'])->name('users.update');
+    Route::post('/users/status', [UserController::class, 'updateStatus'])->name('users.status');
+    Route::get('/users/delete/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 });

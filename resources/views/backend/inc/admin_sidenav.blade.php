@@ -52,8 +52,8 @@
                 </li>
 
                 <li class="aiz-side-nav-item">
-                    <a href="{{ route('portfolios.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['portfolios.create','portfolios.edit']) }}">
-                        <i class="las la-link  aiz-side-nav-icon"></i>
+                    <a href="{{ route('users.index') }}" class="aiz-side-nav-link">
+                        <i class="las la-users  aiz-side-nav-icon"></i>
                         <span class="aiz-side-nav-text">Users</span>
                     </a>
                 </li>
